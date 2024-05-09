@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pecadores Radio Player</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .radio-player {
+    background-image: url('https://xatimg.com/image/tZluW4KHAlIr.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .audio-player {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  audio {
+    width: 100%;
+  }
+  
+  .play-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .play-btn:hover {
+    transform: scale(1.1);
+  }
+</style>
+</head>
+<body>
+<div class="radio-player">
+  <div class="audio-player">
+    <audio id="radio" controls>
+      <source src="https://technoplayerserver.net/8178/stream" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <img class="play-btn" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" width="30">
+  </div>
+</div>
+
+<!-- Radio Website Link -->
+<!-- Include the link to your radio website here -->
+<!-- Example: <a href="https://www.yourradiowebsite.com" target="_blank">Your Radio Website</a> -->
+
+<!-- Social Media Links -->
+<!-- Include links to your social media pages (Facebook, Instagram, Twitter, YouTube) -->
+<!-- Example: <a href="https://www.facebook.com/yourradio" target="_blank">Facebook</a> -->
+
+<!-- Radio Name, Group Link, Developer Info -->
+<!-- Include relevant information about your radio -->
+<!-- Example: <p>RADIO NAME: Your Radio Name</p> -->
+
+<!-- Links to xat.com and permitted sites -->
+<!-- Include any relevant links to xat.com and its permitted sites -->
+
+<script>
+  const audio = document.getElementById('radio');
+  const playBtn = document.querySelector('.play-btn');
+
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.src = 'https://cdn-icons-png.flaticon.com/512/727/727251.png'; // Change to pause button image when playing
+    } else {
+      audio.pause();
+      playBtn.src = 'https://cdn-icons-png.flaticon.com/512/727/727245.png'; // Change to play button image when paused
+    }
+  });
+</script>
+</body>
+</html>
