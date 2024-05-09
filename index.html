@@ -94,6 +94,15 @@
   }
   
   /* Animated circular buttons */
+  .circle-btn-container {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+  }
+
   .circle-btn {
     width: 30px;
     height: 30px;
@@ -103,12 +112,13 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Change background color smoothly */
+    margin-bottom: 5px;
+    transition: transform 0.2s ease;
     animation: fadeIn 0.5s ease forwards;
   }
   
   .circle-btn:hover {
-    background-color: #0056b3; /* Darker background color on hover */
+    transform: scale(1.1);
   }
   
   .circle-btn img {
@@ -138,24 +148,26 @@
     <img class="play-btn" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" width="30">
   </div>
   <div class="audio-player">
-    <!-- Circular buttons for links -->
-    <div class="circle-btn" onclick="window.open('https://www.yourradiowebsite.com', '_blank')">
-      <img src="https://via.placeholder.com/20" alt="Website">
-    </div>
-    <div class="circle-btn" onclick="window.open('https://www.facebook.com/yourradio', '_blank')">
-      <img src="https://via.placeholder.com/20" alt="Facebook">
-    </div>
-    <div class="circle-btn" onclick="window.open('https://www.instagram.com/yourradio', '_blank')">
-      <img src="https://via.placeholder.com/20" alt="Instagram">
-    </div>
-    <div class="circle-btn" onclick="window.open('https://www.twitter.com/yourradio', '_blank')">
-      <img src="https://via.placeholder.com/20" alt="Twitter">
-    </div>
-    <div class="circle-btn" onclick="window.open('https://www.youtube.com/yourradio', '_blank')">
-      <img src="https://via.placeholder.com/20" alt="YouTube">
-    </div>
-    <div class="circle-btn" onclick="window.open('https://xat.com', '_blank')">
-      <img src="https://via.placeholder.com/20" alt="xat.com">
+    <!-- Circular buttons container -->
+    <div class="circle-btn-container">
+      <div class="circle-btn" onclick="window.open('https://www.yourradiowebsite.com', '_blank')">
+        <img src="https://via.placeholder.com/20" alt="Website">
+      </div>
+      <div class="circle-btn" onclick="window.open('https://www.facebook.com/yourradio', '_blank')">
+        <img src="https://via.placeholder.com/20" alt="Facebook">
+      </div>
+      <div class="circle-btn" onclick="window.open('https://www.instagram.com/yourradio', '_blank')">
+        <img src="https://via.placeholder.com/20" alt="Instagram">
+      </div>
+      <div class="circle-btn" onclick="window.open('https://www.twitter.com/yourradio', '_blank')">
+        <img src="https://via.placeholder.com/20" alt="Twitter">
+      </div>
+      <div class="circle-btn" onclick="window.open('https://www.youtube.com/yourradio', '_blank')">
+        <img src="https://via.placeholder.com/20" alt="YouTube">
+      </div>
+      <div class="circle-btn" onclick="window.open('https://xat.com', '_blank')">
+        <img src="https://via.placeholder.com/20" alt="xat.com">
+      </div>
     </div>
     <div class="off-on-btn" onclick="toggleRadio()">
       <img src="https://via.placeholder.com/30" alt="Off/On Button">
