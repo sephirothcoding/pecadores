@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pecadores Radio Player</title>
+<title>Horizontal Radio Player</title>
 <style>
   body {
     margin: 0;
@@ -11,22 +11,33 @@
     font-family: Arial, sans-serif;
   }
   
+  .radio-container {
+    width: 500px;
+    max-width: 100%;
+    height: 500px;
+    max-height: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
   .radio-player {
     background-image: url('https://xatimg.com/image/tZluW4KHAlIr.png');
     background-size: cover;
     background-position: center;
-    height: 200px; /* Adjust height as needed */
+    height: 100%; 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     position: relative;
-    overflow: hidden;
   }
   
   .audio-player {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 10px;
     position: absolute;
@@ -35,7 +46,8 @@
   }
   
   audio {
-    width: 100%;
+    width: calc(100% - 40px); /* Adjust width to fit within the container */
+    margin-right: 10px;
   }
   
   .play-btn {
@@ -46,33 +58,61 @@
   .play-btn:hover {
     transform: scale(1.1);
   }
+  
+  /* Animated circular buttons */
+  .circle-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .circle-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .circle-btn img {
+    width: 20px;
+    height: 20px;
+  }
 </style>
 </head>
 <body>
-<div class="radio-player">
-  <div class="audio-player">
+<div class="radio-container">
+  <div class="radio-player">
     <audio id="radio" controls>
       <source src="https://technoplayerserver.net/8178/stream" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     <img class="play-btn" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" width="30">
+    
+    <!-- Circular buttons for links -->
+    <div class="circle-btn" onclick="window.open('https://www.yourradiowebsite.com', '_blank')">
+      <img src="https://via.placeholder.com/20" alt="Website">
+    </div>
+    <div class="circle-btn" onclick="window.open('https://www.facebook.com/yourradio', '_blank')">
+      <img src="https://via.placeholder.com/20" alt="Facebook">
+    </div>
+    <div class="circle-btn" onclick="window.open('https://www.instagram.com/yourradio', '_blank')">
+      <img src="https://via.placeholder.com/20" alt="Instagram">
+    </div>
+    <div class="circle-btn" onclick="window.open('https://www.twitter.com/yourradio', '_blank')">
+      <img src="https://via.placeholder.com/20" alt="Twitter">
+    </div>
+    <div class="circle-btn" onclick="window.open('https://www.youtube.com/yourradio', '_blank')">
+      <img src="https://via.placeholder.com/20" alt="YouTube">
+    </div>
+    <div class="circle-btn" onclick="window.open('https://xat.com', '_blank')">
+      <img src="https://via.placeholder.com/20" alt="xat.com">
+    </div>
   </div>
 </div>
-
-<!-- Radio Website Link -->
-<!-- Include the link to your radio website here -->
-<!-- Example: <a href="https://www.yourradiowebsite.com" target="_blank">Your Radio Website</a> -->
-
-<!-- Social Media Links -->
-<!-- Include links to your social media pages (Facebook, Instagram, Twitter, YouTube) -->
-<!-- Example: <a href="https://www.facebook.com/yourradio" target="_blank">Facebook</a> -->
-
-<!-- Radio Name, Group Link, Developer Info -->
-<!-- Include relevant information about your radio -->
-<!-- Example: <p>RADIO NAME: Your Radio Name</p> -->
-
-<!-- Links to xat.com and permitted sites -->
-<!-- Include any relevant links to xat.com and its permitted sites -->
 
 <script>
   const audio = document.getElementById('radio');
