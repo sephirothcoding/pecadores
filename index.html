@@ -19,18 +19,40 @@
     margin: auto;
     overflow: hidden;
     position: relative;
+    animation: slideIn 0.5s ease forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .radio-player {
     background-image: url('https://xatimg.com/image/tZluW4KHAlIr.png');
     background-size: cover;
     background-position: center;
-    height: 100%; 
+    height: calc(100% - 40px); /* Adjust height to fit within the container */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   
   .audio-player {
@@ -43,6 +65,18 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    animation: slideUp 0.5s ease forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   audio {
@@ -68,9 +102,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
     cursor: pointer;
     transition: transform 0.2s ease;
+    animation: fadeIn 0.5s ease forwards;
   }
   
   .circle-btn:hover {
@@ -80,6 +114,17 @@
   .circle-btn img {
     width: 20px;
     height: 20px;
+  }
+
+  /* Off/On button */
+  .off-on-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .off-on-btn:hover {
+    transform: scale(1.1);
   }
 </style>
 </head>
@@ -91,8 +136,8 @@
       Your browser does not support the audio element.
     </audio>
     <img class="play-btn" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" width="30">
-    
-    <!-- Circular buttons for links -->
+  </div>
+  <div class="audio-player">
     <div class="circle-btn" onclick="window.open('https://www.yourradiowebsite.com', '_blank')">
       <img src="https://via.placeholder.com/20" alt="Website">
     </div>
@@ -111,6 +156,7 @@
     <div class="circle-btn" onclick="window.open('https://xat.com', '_blank')">
       <img src="https://via.placeholder.com/20" alt="xat.com">
     </div>
+    <img class="off-on-btn" src="https://via.placeholder.com/30" alt="Off/On Button">
   </div>
 </div>
 
