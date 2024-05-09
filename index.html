@@ -32,6 +32,24 @@
       transform: translateY(0);
     }
   }
+
+  .left-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background-image: url('https://via.placeholder.com/100');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
   
   .radio-player {
     background-image: url('https://xatimg.com/image/tZluW4KHAlIr.png');
@@ -97,7 +115,7 @@
   .circle-btn-container {
     position: absolute;
     left: 5px;
-    top: -1000%;
+    top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -131,8 +149,6 @@
     cursor: pointer;
     transition: transform 0.2s ease;
     animation: fadeIn 0.5s ease forwards;
-     left: 5px;
-
   }
 
   .off-on-btn:hover {
@@ -142,6 +158,11 @@
 </head>
 <body>
 <div class="radio-container">
+  <!-- Left container with background image and title -->
+  <div class="left-container">
+    <h2>Title</h2>
+    <img src="https://via.placeholder.com/50" alt="Logo">
+  </div>
   <div class="radio-player">
     <audio id="radio" controls>
       <source src="https://technoplayerserver.net/8178/stream" type="audio/mpeg">
