@@ -1,7 +1,9 @@
-<html lang="en" data-lt-installed="true"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pecadores Radio Player</title>
+<title>Horizontal Radio Player</title>
 <style>
   body {
     margin: 0;
@@ -33,8 +35,8 @@
 
   .left-container {
     position: absolute;
-    left: 10%;
-    top: 15%;
+    left: -50px;
+    top: 50%;
     transform: translateY(-50%);
     width: 100px;
     height: 100px;
@@ -45,8 +47,7 @@
     justify-content: center;
     overflow: hidden;
     z-index: 1;
-}
-  
+  }
 
   .left-container img {
     width: 100%;
@@ -60,7 +61,7 @@
   }
   
   .radio-player {
-    background-image: url('https://xatimg.com/image/FSOjgzXuxKVD.png');
+    background-image: url('https://xatimg.com/image/tZluW4KHAlIr.png');
     background-size: cover;
     background-position: center;
     height: calc(100% - 40px); /* Adjust height to fit within the container */
@@ -121,9 +122,9 @@
   
   /* Animated circular buttons */
   .circle-btn-container {
-   position: absolute;
-    right: 25px;
-    top: -1100%;
+    position: absolute;
+    left: 5px;
+    top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -162,18 +163,38 @@
   .off-on-btn:hover {
     transform: scale(1.1);
   }
+
+  /* Scroller */
+  .scroller {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #ffffff;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 </style>
 </head>
 <body>
 <div class="radio-container">
   <!-- Left container with background image and title -->
   <div class="left-container">
-    <img src="https://xatimg.com/image/PKGEbsaLNLVh.png" alt="Placeholder">
+    <img src="https://via.placeholder.com/100" alt="Placeholder">
   </div>
   <div class="radio-player">
-    <audio id="radio" controls="">
+    <audio id="radio" controls>
       <source src="https://technoplayerserver.net/8178/stream" type="audio/mpeg">
-      Your browser does not support the audio element!
+      Your browser does not support the audio element.
     </audio>
     <img class="play-btn" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" width="30">
   </div>
@@ -181,26 +202,30 @@
     <!-- Circular buttons container -->
     <div class="circle-btn-container">
       <div class="circle-btn" onclick="window.open('https://www.yourradiowebsite.com', '_blank')">
-        <img src="https://xatimg.com/image/jh5bNegb1UIM.png" alt="Website">
+        <img src="https://via.placeholder.com/20" alt="Website">
       </div>
       <div class="circle-btn" onclick="window.open('https://www.facebook.com/yourradio', '_blank')">
-        <img src="https://xatimg.com/image/T9KAqZ0eYvQF.png" alt="Facebook">
+        <img src="https://via.placeholder.com/20" alt="Facebook">
       </div>
       <div class="circle-btn" onclick="window.open('https://www.instagram.com/yourradio', '_blank')">
-        <img src="https://xatimg.com/image/6Zyb8rRtLNr5.png" alt="Instagram">
+        <img src="https://via.placeholder.com/20" alt="Instagram">
       </div>
       <div class="circle-btn" onclick="window.open('https://www.twitter.com/yourradio', '_blank')">
-        <img src="https://xatimg.com/image/Wd2VAcFmONKo.png" alt="Twitter">
+        <img src="https://via.placeholder.com/20" alt="Twitter">
       </div>
       <div class="circle-btn" onclick="window.open('https://www.youtube.com/yourradio', '_blank')">
-        <img src="https://xatimg.com/image/SxMVzgBKmftF.png" alt="YouTube">
+        <img src="https://via.placeholder.com/20" alt="YouTube">
       </div>
       <div class="circle-btn" onclick="window.open('https://xat.com', '_blank')">
-        <img src="https://xatimg.com/image/JWtGQg36adZk.png" alt="xat.com">
+        <img src="https://via.placeholder.com/20" alt="xat.com">
       </div>
     </div>
    
-  <div id="extwaiokist" style="display:none" v="fljme" q="5c78d3e8" c="641.0" i="647" u="19.52" s="04272401" sg="svr_09102316-ga_04272401-bai_05072421" d="0" w="false" e="" a="2" m="BMe=" vn="3spel"><div id="extwaigglbit" style="display:none" v="fljme" q="5c78d3e8" c="641.0" i="647" u="19.52" s="04272401" sg="svr_09102316-ga_04272401-bai_05072421" d="0" w="false" e="" a="2" m="BMe="></div></div></div>
+  </div>
+  <!-- Scroller -->
+  <div class="scroller">
+    <marquee behavior="scroll" direction="left">Listen to your favorite radio!</marquee>
+  </div>
 </div>
 
 <script>
@@ -217,6 +242,5 @@
     }
   }
 </script>
-
-
-</body></html>
+</body>
+</html>
